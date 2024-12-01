@@ -1,0 +1,33 @@
+{
+  "name": "reacture",
+  "version": "0.1.0",
+  "description": "AI-powered React component optimization tool",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "ts-node src/test.ts"
+  },
+  "keywords": [
+    "react",
+    "optimization",
+    "performance",
+    "ai",
+    "webpack",
+    "vite",
+    "nextjs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.0.0",
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  }
+}
