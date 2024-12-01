@@ -40,7 +40,7 @@ export class Reacture {
     };
   }
 
- // Webpack plugin
+  // Webpack plugin
   static webpack(reactureOptions: ReactureOptions = {}) {
     return {
       apply(compiler: any) {
@@ -55,9 +55,22 @@ export class Reacture {
       return this.localOptimizeComponent(componentCode);
     }
 
+    const prompt = `
+      You are a React performance optimization assistant.
+      Optimize this React component for performance:
+      
+      ${componentCode}
+      
+      Provide optimized code that:
+      - Reduces unnecessary re-renders
+      - Uses React.memo or useMemo where appropriate
+      - Minimizes computational complexity
+      - Maintains original component logic
+    `;
+
     try {
       const response = await this.openai.chat.completions.create({
-        model: "gpt-4", 
+        model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
@@ -65,15 +78,7 @@ export class Reacture {
           },
           {
             role: "user",
-            content: `Optimize this React component for performance:
-            
-            ${componentCode}
-            
-            Provide optimized code that:
-            - Reduces unnecessary re-renders
-            - Uses React.memo or useMemo where appropriate
-            - Minimizes computational complexity
-            - Maintains original component logic`
+            content: prompt
           }
         ]
       });
