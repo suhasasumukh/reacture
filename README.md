@@ -2,7 +2,7 @@
 
 ### React component optimization tool
 
-Reacture is a plugin for Vite, Next.js and Webpack that helps optimize the perofmance of your React components during the build process. It uses OpenAI's `gpt-4` model to generate optimized code, improving render speed and reducing unnecessary re-renders.
+Reacture is a plugin for Vite, Next.js and Webpack that helps optimize the perofmance of your React components during the build process. It uses OpenAI's `pt-4o-mini` model to generate optimized code, improving render speed and reducing unnecessary re-renders.
 
 ### Key Features:
 
